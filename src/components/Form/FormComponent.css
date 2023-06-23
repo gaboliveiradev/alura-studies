@@ -1,0 +1,25 @@
+.form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 600px;
+    box-shadow: 5px 5px #888888;
+}
+
+.form div {
+    display: flex;
+    flex-direction: column;
+}
+
+.form div label {
+    font-size: 24px;
+    margin: 0 16px;
+}
+
+.form div input {
+    padding: 16px;
+    width: 90%;
+    margin: 16px;
+    font-size: 16px;
+    outline: none;
+}

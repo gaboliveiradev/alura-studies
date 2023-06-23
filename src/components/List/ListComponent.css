@@ -1,0 +1,22 @@
+.aside {
+    background-color: #fff;
+    height: 300px;
+    box-shadow: 5px 5px #888888;
+    border-radius: 10px;
+    padding: 16px;
+    width: 300px;
+    border-left:5px dashed #000;
+    overflow: auto;
+}
+
+.aside h2 {
+    text-align: center;
+}
+
+.aside ul {
+    list-style-type: none;
+}
+
+.aside ul li {
+    cursor: pointer;
+}
