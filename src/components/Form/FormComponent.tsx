@@ -2,10 +2,12 @@ import React from 'react';
 
 import ButtonComponent from '../Button/ButtonComponent';
 
+import './style.scss';
+
 export default function FormComponent() {
     return (
-        <form>
-            <div>
+        <form className='novaTarefa'>
+            <div className='inputContainer'>
                 <label htmlFor='task'>Adicione uma Tarefa: </label>
                 <input 
                     type='text'
@@ -14,7 +16,7 @@ export default function FormComponent() {
                     required
                 />
             </div>
-            <div>
+            <div className='inputContainer'>
                 <label htmlFor='time'>Defina um Tempo: </label>
                 <input 
                     type='time'
@@ -26,7 +28,9 @@ export default function FormComponent() {
                     required
                 />
             </div>
-            <ButtonComponent />
+            <ButtonComponent>
+                Cadastrar
+            </ButtonComponent>
         </form>
     )
 }
