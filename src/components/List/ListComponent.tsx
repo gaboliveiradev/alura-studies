@@ -1,5 +1,6 @@
 import React from 'react';
 import './style.scss';
+import ItemComponent from './Item/ItemComponent';
 export default function ListComponent() {
 
     const tasks = [{
@@ -16,16 +17,11 @@ export default function ListComponent() {
             <ul>
                 {
                     tasks.map((item, index) => {
-                        return (
-                            <li key={index} className='item'>
-                                <h3>
-                                    {item.task}
-                                </h3>
-                                <span>
-                                    {item.time}
-                                </span>
-                            </li>
-                        )
+                        return <ItemComponent 
+                            task={item.task}
+                            time={item.time}
+                            key={index}
+                        />
                     })
                 }
             </ul>

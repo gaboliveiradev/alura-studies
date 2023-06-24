@@ -29,7 +29,7 @@ export default function FormComponent() {
                 />
             </div>
             <ButtonComponent>
-                Cadastrar
+                Adicionar
             </ButtonComponent>
         </form>
     )
