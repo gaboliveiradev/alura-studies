@@ -1,11 +1,10 @@
 import React from 'react';
-import './FormComponent.css';
 
 import ButtonComponent from '../Button/ButtonComponent';
 
 export default function FormComponent() {
     return (
-        <form className='form'>
+        <form>
             <div>
                 <label htmlFor='task'>Adicione uma Tarefa: </label>
                 <input 

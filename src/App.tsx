@@ -7,8 +7,8 @@ function App() {
   const [task, setTask] = useState([]);
 
   return (
-    <div className="App" style={APP_STYLE}>
-      <section className='main' style={MAIN_STYLE}>
+    <div className="App">
+      <section>
         <FormComponent />
         <ListComponent />
       </section>
@@ -17,18 +17,3 @@ function App() {
 }
 
 export default App;
-
-/* === ESTILIZAÇÃO DA PÁGINA === */
-
-const APP_STYLE = {
-  height: '100vh', 
-  display: 'flex', 
-  justifyContent: 'center', 
-  alignItems: 'center'
-}
-
-const MAIN_STYLE = {
-  display: 'flex',
-  justifyContent: 'center', 
-  alignItems: 'center'
-}

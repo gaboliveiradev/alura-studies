@@ -1,9 +1,8 @@
 import React from 'react';
-import './ButtonComponent.css';
 
 export default function ButtonComponent() {
     return (
-        <div className="button">
+        <div>
             <button>
                 Cadastrar
             </button>

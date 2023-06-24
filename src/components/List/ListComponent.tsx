@@ -1,7 +1,5 @@
 import React from 'react';
 
-import './ListComponent.css';
-
 export default function ListComponent() {
 
     const tasks = [{
@@ -13,7 +11,7 @@ export default function ListComponent() {
     }]
 
     return (
-        <aside className='aside'>
+        <aside>
             <h2>Tarefas</h2>
             <ul>
                 {
