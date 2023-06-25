@@ -1,15 +1,8 @@
-import React from 'react';
 import './style.scss';
 import ItemComponent from './Item/ItemComponent';
-export default function ListComponent() {
+import { ITask } from './../../types/ITask';
 
-    const tasks = [{
-        task: 'Estudar React',
-        time: '01:30:00'
-    }, {
-        task: 'Trabalhar',
-        time: '04:00:00'
-    }]
+export default function ListComponent({tasks}: {tasks: ITask[]} ) {
 
     return (
         <aside className='listaTarefas'>

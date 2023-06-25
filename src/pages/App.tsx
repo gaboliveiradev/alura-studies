@@ -5,16 +5,19 @@ import ListComponent from '../components/List/ListComponent';
 import StopwatchComponent from '../components/Stopwatch/StopwatchdComponent';
 
 import './style.scss';
+import { ITask } from '../types/ITask';
 
 function App() {
-  const [task, setTask] = useState([]);
+  const [tasks, setTask] = useState<ITask[] | []>([])
 
   return (
     <div className="AppStyle">
       <section>
-        <FormComponent />
-        <StopwatchComponent />
-        <ListComponent />
+        <div className='formAndStopWatch'>
+          <FormComponent setTask={setTask} />
+          <StopwatchComponent />
+        </div>
+        <ListComponent tasks={tasks}/>
       </section>
     </div>
   );

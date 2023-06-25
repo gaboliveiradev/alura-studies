@@ -1,12 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import ButtonComponent from '../Button/ButtonComponent';
-
 import './style.scss';
+import { ITask } from '../../types/ITask';
 
-export default function FormComponent() {
+export default function FormComponent(props: {setTask: React.Dispatch<React.SetStateAction<ITask[]>>}) {
+    const [task, setTask] = useState('');
+    const [time, setTime] = useState('00:00');
+
+    const addTask = (e: React.FormEvent) => {
+        e.preventDefault()
+        props.setTask((oldTask) => [...oldTask, {task: task, time: time}])
+
+        setTask('');
+        setTime('00:00');
+    }
+
     return (
-        <form className='novaTarefa'>
+        <form className='novaTarefa' onSubmit={addTask}>
             <div className='inputContainer'>
                 <label htmlFor='task'>Adicione uma Tarefa: </label>
                 <input 
@@ -14,6 +25,8 @@ export default function FormComponent() {
                     name='task'
                     id='task'
                     required
+                    value={task}
+                    onChange={(e) => setTask(e.target.value)}
                 />
             </div>
             <div className='inputContainer'>
@@ -26,9 +39,11 @@ export default function FormComponent() {
                     min='00:00:00'
                     max='01:30:00'
                     required
+                    value={time}
+                    onChange={(e) => setTime(e.target.value)}
                 />
             </div>
-            <ButtonComponent>
+            <ButtonComponent type="submit">
                 Adicionar
             </ButtonComponent>
         </form>

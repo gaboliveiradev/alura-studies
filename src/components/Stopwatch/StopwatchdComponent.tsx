@@ -10,7 +10,7 @@ export default function StopwatchComponent() {
             <div className="relogioWrapper">
                 <ClockComponent />
             </div>
-            <ButtonComponent>
+            <ButtonComponent type='button'>
                 Iniciar
             </ButtonComponent>
         </div>
