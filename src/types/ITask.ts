@@ -1,4 +1,9 @@
+import { V4Options } from "uuid";
+
 export interface ITask {
+    id: string,
     task: string,
-    time: string
+    time: string,
+    selected: boolean,
+    finished: boolean
 }

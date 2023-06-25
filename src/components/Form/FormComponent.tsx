@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import ButtonComponent from '../Button/ButtonComponent';
 import './style.scss';
 import { ITask } from '../../types/ITask';
+import { v4 as uuidV4} from 'uuid';
 
 export default function FormComponent(props: {setTask: React.Dispatch<React.SetStateAction<ITask[]>>}) {
     const [task, setTask] = useState('');
@@ -10,7 +11,16 @@ export default function FormComponent(props: {setTask: React.Dispatch<React.SetS
 
     const addTask = (e: React.FormEvent) => {
         e.preventDefault()
-        props.setTask((oldTask) => [...oldTask, {task: task, time: time}])
+        props.setTask((oldTask) => 
+        [...oldTask, 
+            {
+                id: uuidV4(),
+                task: task, 
+                time: time,
+                selected: false,
+                finished: false
+            }
+        ])
 
         setTask('');
         setTime('00:00');

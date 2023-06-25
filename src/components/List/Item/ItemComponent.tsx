@@ -1,11 +1,15 @@
-export default function ItemComponent(props: {task: string, time: string}) {
+import { ITask } from "../../../types/ITask";
+
+export default function ItemComponent({task, time, selected, finished, id}: ITask) {
+    console.log('Item Atual: ', {task, time, selected, finished, id});
+
     return (
         <li className='item'>
             <h3>
-                {props.task}
+                {task}
             </h3>
             <span>
-                {props.time}
+                {time}
             </span>
         </li>
     )

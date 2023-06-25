@@ -13,7 +13,10 @@ export default function ListComponent({tasks}: {tasks: ITask[]} ) {
                         return <ItemComponent 
                             task={item.task}
                             time={item.time}
-                            key={index}
+                            key={index} 
+                            id={item.id} 
+                            selected={item.selected} 
+                            finished={item.finished}                        
                         />
                     })
                 }
