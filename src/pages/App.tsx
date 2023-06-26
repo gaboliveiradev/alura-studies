@@ -9,6 +9,11 @@ import { ITask } from '../types/ITask';
 
 function App() {
   const [tasks, setTask] = useState<ITask[] | []>([])
+  const [selected, setSelected] = useState<ITask>();
+
+  const selectTask = (taskSelected: ITask) => {
+    setSelected(taskSelected);
+  }
 
   return (
     <div className="AppStyle">
@@ -17,7 +22,10 @@ function App() {
           <FormComponent setTask={setTask} />
           <StopwatchComponent />
         </div>
-        <ListComponent tasks={tasks}/>
+        <ListComponent 
+          tasks={tasks}
+          selectTask={selectTask}
+        />
       </section>
     </div>
   );
