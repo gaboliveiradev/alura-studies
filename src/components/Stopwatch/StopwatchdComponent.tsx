@@ -6,10 +6,11 @@ import './style.scss'
 import timeToSeconds from '../../common/utils/time';
 
 interface IProps {
-    selected: ITask | undefined
+    selected: ITask | undefined,
+    finishTask: () => void
 }
 
-export default function StopwatchComponent({selected}: IProps) {
+export default function StopwatchComponent({selected, finishTask}: IProps) {
     const [time, setTime] = useState<number>();
 
     useEffect(() => {
@@ -25,6 +26,8 @@ export default function StopwatchComponent({selected}: IProps) {
                 setTime(time - 1);
                 return regressive(time - 1);
             }
+            
+            finishTask();
         }, 1000);
     }
 

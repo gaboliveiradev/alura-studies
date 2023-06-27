@@ -8,8 +8,8 @@ interface IProps extends ITask {
 export default function ItemComponent({task, time, selected, finished, id, selectTask}: IProps) {
     return (
         <li 
-            className={`item ${selected ? 'itemSelecionado' : ''}`} 
-            onClick={() => selectTask({
+            className={`item ${selected ? 'itemSelecionado' : ''} ${finished ? 'itemCompletado' : ''}`} 
+            onClick={() => !finished && selectTask({
                 id,
                 task,
                 time,
@@ -23,6 +23,7 @@ export default function ItemComponent({task, time, selected, finished, id, selec
             <span>
                 {time}
             </span>
+            {finished && <span className="concluido" aria-label="task completed"></span>}
         </li>
     )
 }

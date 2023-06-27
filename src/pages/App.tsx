@@ -19,12 +19,32 @@ function App() {
     })));
   }
 
+  const finishTask = () => {
+    if(selected) {
+      setSelected(undefined);
+      setTask(oldTasks => oldTasks.map(task => {
+        if(task.id === selected.id) {
+          return {
+            ...task,
+            selected: false,
+            finished: true
+          }
+        }
+
+        return task;
+      }));
+    }
+  }
+
   return (
     <div className="AppStyle">
       <section>
         <div className='formAndStopWatch'>
           <FormComponent setTask={setTask} />
-          <StopwatchComponent selected={selected}/>
+          <StopwatchComponent 
+            selected={selected}
+            finishTask={finishTask}
+          />
         </div>
         <ListComponent 
           tasks={tasks}
