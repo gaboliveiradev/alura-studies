@@ -1,0 +1,7 @@
+export default function timeToSeconds(time: string) {
+    const [hours = '0', minutes = '0', seconds = '0'] = time.split(':');
+
+    const hoursToSeconds = Number(hours) * 3600;
+    const minuteToSeconds = Number(minutes) * 60;
+    return hoursToSeconds + minuteToSeconds + Number(seconds);
+}

@@ -1,15 +1,14 @@
 import { ITask } from "../../../types/ITask";
+import './style.scss';
 
 interface IProps extends ITask {
     selectTask: (taskSelected: ITask) => void
 }
 
 export default function ItemComponent({task, time, selected, finished, id, selectTask}: IProps) {
-    console.log('Item Atual: ', {task, time, selected, finished, id});
-
     return (
         <li 
-            className='item' 
+            className={`item ${selected ? 'itemSelecionado' : ''}`} 
             onClick={() => selectTask({
                 id,
                 task,
