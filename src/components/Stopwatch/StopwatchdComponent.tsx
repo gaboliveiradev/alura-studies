@@ -18,14 +18,23 @@ export default function StopwatchComponent({selected}: IProps) {
         }
     }, [selected]); 
 
+    const regressive = (time: number = 0) =>{
+        // Função Recursiva, executar a função dentro dela mesmo (basicamente um do while)
+        setTimeout(() => {
+            if(time > 0) {
+                setTime(time - 1);
+                return regressive(time - 1);
+            }
+        }, 1000);
+    }
+
     return (
         <div className="cronometro">
             <p className="titulo">Escolha um card e inicie o cronômetro</p>
-            Tempo: {time}
             <div className="relogioWrapper">
-                <ClockComponent />
+                <ClockComponent time={time} />
             </div>
-            <ButtonComponent type='button'>
+            <ButtonComponent type='button' onClick={() => regressive(time)}>
                 Iniciar
             </ButtonComponent>
         </div>
