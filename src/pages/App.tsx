@@ -24,7 +24,7 @@ function App() {
       <section>
         <div className='formAndStopWatch'>
           <FormComponent setTask={setTask} />
-          <StopwatchComponent />
+          <StopwatchComponent selected={selected}/>
         </div>
         <ListComponent 
           tasks={tasks}
